@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply font-sans;
+    }
+}
+
+@layer components {
+    small {
+        @apply text-sm font-medium font-mono text-primary-content;
+    }
+
+    h1 {
+        @apply text-3xl font-medium font-mono text-primary-content;
+    }
+    h2 {
+        @apply text-2xl font-medium font-mono text-primary-content;
+    }
+    h3 {
+        @apply text-xl font-medium font-mono text-primary-content;
+    }
+
+    .date_duration {
+        @apply text-sm font-medium font-mono text-primary-content;
+    }
+
+    .box {
+        @apply py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2
+    }
+
+    .btn-primary-gradient {
+        @apply bg-primary-gradient text-white;
+    }
+
+    .btn-primary-gradient:hover {
+        @apply bg-primary-gradient-inverse;
+    }
+
+    .btn-standard {
+        @apply flex w-9 h-9 justify-center items-center rounded-md;
+    }
+
+    .btn-rounded {
+        @apply rounded-full font-mono text-xl px-6 py-2 font-semibold;
+    }
+
+    .bg-primary-gradient {
+        @apply bg-gradient-to-r from-primary to-primary-focus;
+    }
+    .bg-primary-gradient-inverse {
+        @apply bg-gradient-to-r from-primary-focus to-primary;
+    }
+
+    .text-primary-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-focus;
+    }
+
+    .btn-transition {
+        @apply transition duration-500 ease-in-out;
+    }
+
+    .card-transition {
+        @apply transition duration-500 ease-in-out;
+    }
+}
