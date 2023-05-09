@@ -1,5 +1,5 @@
 <template>
-  <div class="col-span-12 lg:col-span-3 hidden lg:block h-screen sticky top-44">
+  <div class="col-span-10 lg:col-span-3 hidden lg:block h-screen sticky top-44">
       <div class="w-full mb-6 lg:mb-0 mx-auto relative bg-gray-800 text-center px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
           <img src="https://avatars.githubusercontent.com/u/33726176?v=4" class="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px]" alt="about">
           <div class="pt-[100px] pb-8">
@@ -7,51 +7,25 @@
               <h3 class="mb-4 text-secondary-content inline-block px-5 py-1.5 rounded-lg bg-gray-900">
                   Software Engineer
               </h3>
-              <div class="flex justify-center space-x-3">
-                  <a href="https://www.linkedin.com/in/rikpeeters-nl" target="_blank" rel="noopener noreferrer">
-                      <span class="btn-standard hover:btn-primary-gradient text-[#0077B5] btn-transition bg-gray-900">
-                          <r-icon :icon="['fa-brands', 'fa-linkedin-in']"/>
-                      </span>
-                  </a>
-
-                  <a href="https://www.github.com/rikp777" target="_blank" rel="noopener noreferrer">
-                      <span class="btn-standard hover:btn-primary-gradient text-[#333] btn-transition bg-gray-900">
-                          <r-icon :icon="['fa-brands', 'fa-github']" />
-                      </span>
-                  </a>
-
-                  <a href="https://www.last.fm/user/rikp777" target="_blank" rel="noopener noreferrer">
-                      <span class="btn-standard hover:btn-primary-gradient text-[#1773EA] btn-transition bg-gray-900">
-                          <r-icon :icon="['fa-brands', 'fa-lastfm']" />
-                      </span>
-                  </a>
-
-                  <a href="https://www.instagram.com/me.rikp/" target="_blank" rel="noopener noreferrer">
-                      <span class="btn-standard hover:btn-primary-gradient text-[#e95950] btn-transition bg-gray-900">
-                          <r-icon :icon="['fa-brands', 'fa-instagram']"/>
-                      </span>
-                  </a>
-
-
-              </div>
+              <social-media/>
               <!-- personal infomation start -->
               <div class="p-7 rounded-2xl mt-7 bg-gray-900">
                   <div class="flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] pb-2.5">
                       <span class="btn-standard hover:btn-primary-gradient bg-gray-800 text-[#E93B81] shadow-md btn-transition">
-                          <r-icon :icon="['fa-solid', 'fa-mobile-screen-button']"/>
+                          <r-icon :icon="['fa-solid', 'fa-laptop-code']"/>
                       </span>
                       <div class="text-left ml-2.5">
-                          <p class="text-secondary-content text-xs font-medium"> Phone </p>
-                          <p class="text-primary-content font-semibold">+31 6 1331 2009</p>
+                          <p class="text-secondary-content text-xs font-medium"> Skills </p>
+                          <p class="text-primary-content font-semibold">Java, Vue.js</p>
                       </div>
                   </div>
                   <div class="flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] py-2.5">
                       <span class="btn-standard hover:btn-primary-gradient bg-gray-800 text-[#6AB5B9] shadow-md btn-transition">
-                          <r-icon :icon="['fa-solid', 'fa-envelope-open-text']"/>
+                         <r-icon :icon="['fa-solid', 'fa-project-diagram']"/>
                       </span>
                       <div class="text-left ml-2.5">
-                          <p class="text-secondary-content text-xs font-medium"> Email </p>
-                          <p class="text-primary-content font-semibold">rikpeeters@hotmail.com</p>
+                          <p class="text-secondary-content text-xs font-medium"> Projects </p>
+                          <p class="text-primary-content font-semibold">RP-Flowcontrol, RP-Fitness, RP-Portfolio</p>
                       </div>
                   </div>
                   <div class="flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] py-2.5">
@@ -77,7 +51,7 @@
               <!-- dowanload button -->
               <button class="mx-auto my-auto mt-5 flex items-center btn-primary-gradient btn-rounded btn-transition font-medium">
                   <r-icon :icon="['fa-solid', 'fa-download']" class="mr-2"/>
-                  Download CV
+                  Contact
               </button>
           </div>
       </div>
@@ -85,8 +59,11 @@
 </template>
 
 <script>
+import SocialMedia from "./SocialMedia.vue";
+
 export default {
-    name: "MeCard"
+    name: "MeCard",
+    components: {SocialMedia}
 }
 </script>
 

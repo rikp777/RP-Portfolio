@@ -1,12 +1,12 @@
 <template>
-    <div v-if="job"  :class="job.color" class="rounded-2xl">
-        <div class="relative bg-gray-800 rounded-t-2xl">
+    <div v-if="job" :class="job.color" class="lg:rounded-2xl">
+        <div class="relative bg-gray-950 lg:rounded-t-2xl">
             <a :href="job.url" target="_blank" rel="noreferrer">
                 <div v-show="job.src">
                     <img class="h-24 object-contain max-w-[50%] p-3 mx-auto hover:scale-125  transition duration-500 ease-in-out transform  "  :src="job.src" :alt="job.name">
                 </div>
             </a>
-            <div class="badge badge-error top-1 right-1 absolute" v-if="!job.profession">non prof</div>
+            <div class="badge badge-primary top-3 right-3 absolute text-xs font-bold text-gray-900" v-if="!job.profession">non prof</div>
         </div>
 
         <div class="box">

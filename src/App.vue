@@ -4,6 +4,8 @@ import MeCard from "./components/Me/MeCard.vue";
 import {onMounted, ref} from "vue";
 
 import TheLogo from "./components/logos/TheLogo.vue";
+import SocialMedia from "./components/Me/SocialMedia.vue";
+import NavStack from "./components/navigation/NavStack.vue";
 
 const mobileMenuOpen = ref(false);
 
@@ -14,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="bg-gray-900 relative min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full">
+    <div class="bg-gray-900 relative min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full selection:bg-primary selection:text-primary-content">
         <div class="md:w-4/5 mx-auto">
             <div class="w-full flex justify-between px-4 py-5">
                 <a href="/">
@@ -77,17 +79,21 @@ onMounted(() => {
         <div class="md:w-4/5 mx-auto grid grid-cols-12 md:gap-10 justify-between lg:mt-[220px]">
             <me-card />
 
+
             <!-- Content-->
-            <div class="col-span-12 lg:col-span-8">
+            <div class="lg:col-span-8">
                 <nav-bar />
                 <div>
-
                         <router-view />
-                        <footer class="overflow-hidden rounded-b-2xl" style="background: transparent">
+                        <footer class="overflow-hidden rounded-b-2xl mt-12" style="background: transparent">
+                            <social-media/>
                             <p class="text-center py-6 text-gray-lite dark:text-color-910"> © 2022 All Rights Reserved </p>
                         </footer>
 
                 </div>
+            </div>
+            <div class="col-span-1 lg:col-span-1 hidden lg:block h-screen sticky top-44">
+                <nav-stack />
             </div>
         </div>
     </div>

@@ -20,10 +20,10 @@ const recommendations =  [
 
 <template>
     <page-card title="Recommendations" sub-title="what do my mentors, friends & colleagues say" :bg="false" :padding="false">
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div v-for="(rec, index) in recommendations" :key="`rec-${index}`" class="relative h-full bg-gray-800 rounded-lg shadow-lg text-base w-full">
+        <div class="grid grid-cols-1 lg:gap-4 sm:grid-cols-2">
+            <div v-for="(rec, index) in recommendations" :key="`rec-${index}`" class="relative h-full bg-gray-800 lg:rounded-lg shadow-lg text-base w-full">
                 <blockquote class="relative">
-                    <div class="rounded-t-lg px-5 py-5 sm:px-8 sm:py-8y">
+                    <div class="lg:rounded-t-lg px-5 py-5 sm:px-8 sm:py-8y">
                         <div class="flex flex-row">
                             <a :href="rec.linkedin" target="_blank" rel="noreferrer">
                                 <cite class="flex items-center rounded-b-lg not-italic">

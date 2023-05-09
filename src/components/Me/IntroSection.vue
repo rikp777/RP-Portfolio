@@ -39,7 +39,7 @@ onMounted(() => {
                     </div>
                 </div>
             </h1>
-            <p class="mt-3 sm:mt-5 text-secondary-content" v-bind:class="{'hidden': introVisible, ' animate-fade':!introVisible }">
+            <p class="mt-3 sm:mt-5 text-secondary-content pb-3" v-bind:class="{'hidden': introVisible, ' animate-fade':!introVisible }">
                 Hey there it's me Rik Peeters 👋👀. I am a Software Engineer and Cyber Security specialist. On this website you can read all about projects and assignments I did during my studies. In doing so, you can read what my approach is to projects and my knowledge for these topics becomes clear.
             </p>
         </div>

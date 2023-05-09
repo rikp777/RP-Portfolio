@@ -1,38 +1,40 @@
 <template>
-    <div v-if="school" class="box" :class="school.color">
-        <div class="flex">
+    <div v-if="school" :class="school.color" class="lg:rounded-2xl">
+        <div class="relative bg-gray-950 lg:rounded-t-2xl">
             <a :href="school.url" target="_blank" rel="noreferrer">
-                <cite class="rounded-b-lg not-italic">
-                    <div class="transition duration-500 ease-in-out transform hover:translate-x-4 hover:scale-110 mr-4" v-show="school.src">
-                        <img class=" h-16 object-contain max-w-[50%]" :src="school.src" :alt="school.name">
-                    </div>
-
-                    <h2 class="text-xl dark:text-white" v-show="!school.src">{{ school.name}}</h2>
-                    <span class="date_duration">{{school.totalDuration}}</span>
-
-
-                </cite>
+                <div v-show="school.src">
+                    <img
+                        class="h-24 object-contain max-w-[50%] p-3 mx-auto hover:scale-125 transition duration-500 ease-in-out transform  "
+                        :src="school.src"
+                        :alt="school.name"
+                    >
+                </div>
             </a>
         </div>
 
-        <div class="relative font-medium m-2" v-show="school.description">
-            <svg class="absolute top-0 left-0 transform -translate-x-4 h-8 w-8 text-gray-200" fill="currentColor" viewBox="0 0 32 32">
-                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-            </svg>
-            <p class="relative">
-                {{ school.description }}
-            </p>
-        </div>
+        <div class="box">
+            <h2 class="text-xl dark:text-white" v-show="!school.src">{{ school.name }}</h2>
+            <span class="date_duration">{{ school.totalDuration }}</span>
+            <div class="relative font-medium m-2" v-show="school.description">
+                <svg class="absolute top-0 left-0 transform -translate-x-4 h-8 w-8 text-gray-900" fill="currentColor"
+                     viewBox="0 0 32 32">
+                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
+                </svg>
+                <p class="relative">
+                    {{ school.description }}
+                </p>
+            </div>
 
 
-        <div class="box" v-for="(route, index) in school.routes" :key="index" :class="route.color">
-            <a :href="route.url" target="_blank" rel="noreferrer">
-                <h3>{{route.name}}</h3>
-                <small>{{route.type}}</small> |
-            </a>
-            <span class="date_duration">{{route.duration}}</span>
+            <div class="box" v-for="(route, index) in school.routes" :key="index" :class="route.color">
+                <a :href="route.url" target="_blank" rel="noreferrer">
+                    <h3>{{ route.name }}</h3>
+                    <small>{{ route.type }}</small> |
+                </a>
+                <span class="date_duration">{{ route.duration }}</span>
 
-            <p>{{route.description}}</p>
+                <p>{{ route.description }}</p>
+            </div>
         </div>
     </div>
 </template>

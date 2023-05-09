@@ -16,10 +16,42 @@ library.add(fas, far, fab);
 
 
 const routes = [
-    { path: '/', component: () => import('./components/Home.vue')},
-    { path: '/about', component: () => import('./components/Me/AboutCard.vue')},
-    { path: '/resume', component: () => import('./components/resume/ResumeCard.vue')},
-    { path: '/play', component: () => import('./components/play/PlayDashboard.vue')},
+    {
+        path: '/',
+        component: () => import('./components/Home.vue'),
+        meta: {
+            title: 'Home',
+            icon: 'home',
+            animation: 'group-hover:animate-heartBeat'
+        }
+    },
+    {
+        path: '/about',
+        component: () => import('./components/Me/AboutCard.vue'),
+        meta: {
+            title: 'About',
+            icon: 'user',
+            animation: 'group-hover:animate-bounceIn'
+        }
+    },
+    {
+        path: '/resume',
+        component: () => import('./components/resume/ResumeCard.vue'),
+        meta: {
+            title: 'Resume',
+            icon: 'file-alt',
+            animation: 'group-hover:animate-bounce'
+        }
+    },
+    {
+        path: '/play',
+        component: () => import('./components/play/PlayDashboard.vue'),
+        meta: {
+            title: 'Play',
+            icon: 'gamepad',
+            animation: 'group-hover:animate-wiggle'
+        }
+    },
 ]
 
 const router = VueRouter.createRouter({
